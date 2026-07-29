@@ -1,9 +1,6 @@
 #include <I2CIO.h>
 #include <LCD.h>
 #include <LiquidCrystal_I2C.h>
-
-
-
 #include<DHT.h>
 LiquidCrystal_I2C lcd(0x20, 4, 5, 6, 0, 1, 2, 3, 7, NEGATIVE);
 DHT dht(2,DHT11);
@@ -19,7 +16,6 @@ void setup() {
   dht.begin();
   Serial.begin(9600);
   Serial.println("Temperature and Humidity Sensor");
-
 }
 
 void loop() {
@@ -41,6 +37,5 @@ void loop() {
   lcd.setCursor(1,1);
   lcd.print(humMessage);
   delay(1000);
-
 
 }
